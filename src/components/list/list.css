@@ -1,0 +1,13 @@
+.list p{
+    color: rgba(64,158,255,.9);
+    color: #409eff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 35px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.list p:active{
+    color: #ccc;
+}

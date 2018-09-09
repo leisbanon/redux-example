@@ -1,0 +1,66 @@
+
+/* subHeader */
+.subHeader {
+    padding: 5px 10px;
+    background-color:rgba(95,158,160,0.8);
+    color: white;
+    font-weight: bold;
+    /* margin: 0 -10px 0 -10px; */
+    margin-top: 20px;
+}
+
+pre{
+    background: #282c34;
+    color: #fff;
+    white-space: pre-line;
+    padding: 15px;
+    line-height: 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    overflow: auto;
+}
+pre code{
+    white-space: pre;
+    position: relative;
+}
+
+.App {
+    position: absolute;
+    bottom: 0;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+}
+.app-container {
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+}
+.app-container .list {
+    padding-left: 20px;
+    padding-right: 20px;
+    -ms-flex: 2 1;
+    flex: 2 1;
+    height: 100%;
+    overflow: auto;
+    -webkit-box-shadow: 3px 5px 15px #CCC;
+    box-shadow: 3px 5px 15px #CCC;
+}
+.app-container .list+* {
+    -webkit-box-shadow: 3px 5px 15px #CCC;
+    box-shadow: 3px 5px 15px #CCC;
+    overflow: auto;
+    -ms-flex: 5 1;
+    flex: 5 1;
+    padding: 30px 100px 30px 100px;
+}
+
+.color-green {
+    color: #7ec699;
+}
+.color-red{
+    color: #a31631;
+}
+.indent {
+    text-indent: 1em;
+}

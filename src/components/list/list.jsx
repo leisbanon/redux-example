@@ -16,7 +16,8 @@ const Content = withRouter(({history,location,match}) => {
             <p onClick={() => history.push(`${match.path}/view1`)}>1、Redux 开始。基础示例</p>
             <p onClick={() => history.push(`${match.path}/view2`)}>2、Redux 开始。基础示例-源码,（分分种入门Redux）</p>
             <p onClick={() => history.push(`${match.path}/view3`)}>3、使用进阶 Action</p>
-            <p onClick={() => history.push(`${match.path}/view4`)}>3、使用进阶 Reducer</p>
+            <p onClick={() => history.push(`${match.path}/view4`)}>4、使用进阶 Reducer</p>
+            <p onClick={() => history.push(`${match.path}/view5`)}>5、使用进阶 Store</p>
         </div>
     )
 })

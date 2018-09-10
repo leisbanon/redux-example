@@ -17,8 +17,16 @@ class View4 extends React.Component {
                     <li><p>需要注意的点，Reducer 函数一定要保证清洁，这是Reducer 编写的规范！意指，在Reducer 函数中，不应有任何存在的API 请求、没有变量的修改、没有什么特殊情况的存在等。</p></li>
                 </ul>
                 <pre>
-                    
+                <code>{`
+                import {
+                    USER_ID
+                } from './action'
+
+                export const TO_USER_ID = (text) => USER_ID(text);
+                `}</code>
                 </pre>
+
+                <SubHeader title='拆分 Reducer'/>
                     
             </div>
         )

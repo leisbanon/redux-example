@@ -67,6 +67,11 @@ const routers = [
         // 使用进阶 Reducer
         path:'/view4',
         component:loadables('view4')
+    },
+    {
+        // 使用进阶 Store
+        path:'/view5',
+        component:loadables('view5')
     }
 ];
 

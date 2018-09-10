@@ -19,7 +19,7 @@ const loggerMiddleware = createLogger({
 const store = createStore(
     reducer,
     composeWithDevTools(),
-    // applyMiddleware(loggerMiddleware),
+    applyMiddleware(loggerMiddleware),
 );
 
 export default store;

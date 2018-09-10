@@ -3,7 +3,10 @@ import { hot } from 'react-hot-loader'
 import { SubHeader } from '@/components'
 
 import store from '@/store/store'
-import {user} from '@/store/action'
+import {
+    user,
+    hotel,
+} from '@/store/action'
 
 class View5 extends React.Component {
     constructor(props) {
@@ -30,30 +33,56 @@ class View5 extends React.Component {
                 let store = createStore(TO_USER_ID);
                 `}</pre>
 
-                <p><button onClick={this.toDispatch.bind(this)}>Store Dispatch</button></p>
-                <p><button onClick={this.toGetState.bind(this)}>to get state</button></p>
+                <p><button onClick={this.toDispatch.bind(this)}>Store Dispatch userId</button></p>
+                <p><button onClick={this.toDispatch_1.bind(this)}>Store Dispatch useName</button></p>
+                <p><button onClick={this.toDispatch_2.bind(this)}>Store Dispatch roomId</button></p>
             </div>
         )
     }
     toDispatch() {
-        store.subscribe(() => {
+        //注册监听State.
+        const unsubscribe = store.subscribe(() => {
             let state = store.getState();
-            // console.log(state);
+            console.log(state);
+        });
+
+        store.dispatch({
+            type:user.userId,
+            text:'431103',
+        });
+
+        //销毁监听
+        unsubscribe();
+    }
+    toDispatch_1() {
+        //注册监听State.
+        const unsubscribe = store.subscribe(() => {
+            let state = store.getState();
+            console.log(state);
         });
 
         store.dispatch({
             type:user.userName,
             text:'GuanQun',
         });
-        
-        store.dispatch({
-            type:user.userEmail,
-            text:'15800349672@163.com',
-        });
+
+        //销毁监听
+        unsubscribe();
     }
-    toGetState() {
-        let state = store.getState('USER_NAME');
-        console.log(state);
+    toDispatch_2() {
+        //注册监听State.
+        const unsubscribe = store.subscribe(() => {
+            let state = store.getState();
+            console.log(state);
+        });
+
+        store.dispatch({
+            type:hotel.roomId,
+            text:'520123',
+        });
+
+        //销毁监听
+        unsubscribe();
     }
 }
 

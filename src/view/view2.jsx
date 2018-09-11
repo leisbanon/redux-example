@@ -2,57 +2,56 @@ import React from 'react'
 import { hot } from 'react-hot-loader'
 import { SubHeader } from '@/components'
 
-class View2 extends React.Component {
+class View3 extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return(
             <div>
-                <SubHeader title='Redux 开始。基础示例-源码'/>
-                <p className='indent'>直接查看有效的代码便更加客观的帮助我们理解和使用，实际在中应用Redux 并不难。其次在对与其概念性的学习，了解Redux 内部是如何运作的，明白之后使用Redux 便轻车上路了,当然这里只是一个简单的示例：</p>
+                <SubHeader title='使用进阶 => Action'/>
+                <p>定义Action：</p>
+                <ul>
+                    <li>
+                        <p>Action 内必须使用一个type 字符串的类型来表示即将发生的动作。</p>
+                    </li>
+                    <li>
+                        <p>一般我们将 type 定义一个字符串常量，知道常量我们都是定义它都是大写的字母，这是规范。</p>
+                    </li>
+                    <li>
+                        <p>如果当我们的应用越来越大，所定义的Action 越来越多，这是我们可以建立一个单独的js 文来保存我们的Action，这样就让我们的代码更加简洁了，也便于阅读。当然如果我们的应用涉及的状态管理的组件不多，这中操作完全不必要。</p>
+                        <ul>
+                            <li>{`import { USER_ID } from '../actionTypes'`}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <pre>
+                    {`
+                        {
+                            type:'USER_ID',
+                            text:'431103',
+                            index:'1'
+                        }
+                    `}
+                </pre>
+
+                <SubHeader title='创建Action 函数' />
+                <p className='indent'>创建我们的Action 函数，然后返回我们的Action. 这样做的好处就是，我们可以直接调用函数来生成我们的action,而不是每一次都手动去变编写生成。</p>
                 <pre>
                 <code>{`
-            import React from 'react'
-            import {createStore } from 'redux'
-
-            // 这里设置sate 的默认值为0
-            const user = (state = 0,action) => {
-                console.log(action);
-                switch(action.type) {
-                    case 'USER_ID':
-                        return action.text;
-                    default:
-                        return state;
+                /**
+                 * Action 类型
+                 */
+                const USER_ID = 'USER_ID';
+                
+                
+                /**
+                 * Action 创建函数
+                 */
+                export const USER_ID = (text) => {
+                    type:USER_ID,
+                    text
                 }
-            }
-
-            // 创建Redux Store
-            let store = createStore(user);
-
-            class Content extends React.Component {
-                constructor(props) {
-                    super(props);
-                    this.state = {
-                        userId:store.getState()
-                    }
-                }
-                render() {
-                    return(
-                        <button onClick={this.setStore.bind(this)}>Store Dispatch</button>
-                    )
-                }
-                setStore() {
-                    // 监听Store State 的变化，并设置到component state
-                    store.subscribe(v => { 
-                        this.setState({
-                            userId:store.getState()
-                        })
-                    });
-                    //提交状态变更
-                    store.dispatch({
-                        type:'USER_ID',
-                        text:'431103',
-                    });
-                }
-            }
                 `}</code>
                 </pre>
             </div>
@@ -60,4 +59,4 @@ class View2 extends React.Component {
     }
 }
 
-export default hot(module)(View2)
+export default hot(module)(View3)

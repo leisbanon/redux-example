@@ -49,29 +49,24 @@ const routers = [
         component:loadables('view0')
     },
     {
-        // Redux 开始。基础示例
+        // Redux 开始。基础示例-源码,分分种入门Redux
         path:'/view1',
         component:loadables('view1')
     },
     {
-        // Redux 开始。基础示例-源码,分分种入门Redux
+        // 使用进阶 Action
         path:'/view2',
         component:loadables('view2')
     },
     {
-        // 使用进阶 Action
+        // 使用进阶 Reducer
         path:'/view3',
         component:loadables('view3')
     },
     {
-        // 使用进阶 Reducer
+        // 使用进阶 Store
         path:'/view4',
         component:loadables('view4')
-    },
-    {
-        // 使用进阶 Store
-        path:'/view5',
-        component:loadables('view5')
     }
 ];
 

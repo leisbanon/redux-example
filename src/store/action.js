@@ -13,15 +13,13 @@ export const hotel = {
 
 // 书籍常量State
 export const book = {
-    bookId:'BOOK_ID',
     bookName:'BOOK_NAME',
-    bookPrice:'BOOK_PRICE',
-    bookAuthor:'BOOK_AUTHOR',
 }
 
 /**
  * 创建Action 函数
  */
+// 用户ID
 export const userId = (text) => {
     return {
         type:user.userId,
@@ -29,4 +27,10 @@ export const userId = (text) => {
     }
  }
 
-
+//书籍名称
+export const bookName = (text) => {
+    return {
+        type:book.bookName,
+        text
+    }
+}

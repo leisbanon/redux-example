@@ -43,35 +43,16 @@ const toHotel = (state={},action) => {
   return state;
 }
 
-const toBook = (state = {},action) => {
-  //action book bookId
-  if(action.type == book.bookId) {
-    return Object.assign(state,{
-      'bookId':action.text
-    });
-  }
-
-  //action book bookName
+let defaultBook = ['西游记'];
+const toBook = (state = defaultBook,action) => {
   if(action.type == book.bookName) {
-    return Object.assign(state,{
-      'bookName':action.text
-    });
+    let array = [
+      ...state,
+      ...[action.text]
+    ];
+    let set = new Set(array);
+    return [...set];
   }
-
-  //action book bookPrice
-  if(action.type == book.bookPrice) {
-    return Object.assign(state,{
-      'bookPrice':action.text
-    });
-  }
-
-  //action book bookAuthor
-  if(action.type == book.bookAuthor) {
-    return Object.assign(state,{
-      'bookAuthor':action.text
-    });
-  }
-
   return state;
 }
 

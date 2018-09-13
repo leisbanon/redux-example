@@ -7,9 +7,6 @@ import {
 
 import { rootRouters } from '@/router/router'
 
-import {Provider} from 'react-redux'
-import store from '@/store/store'
-
 /**
  * 组件 以及 复合组件的应用
  */
@@ -17,7 +14,6 @@ class App extends React.Component {
   render() {
     return(
       <div className='App'>
-        <Provider store={store}>
           <Router>
             <Switch>
               {
@@ -33,7 +29,6 @@ class App extends React.Component {
               }
             </Switch>
           </Router>
-        </Provider>
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 import { SubHeader } from '@/components'
-
 
 import {
     user,
@@ -10,10 +10,9 @@ import {
     userId,
 } from '@/store/action'
 
+import store from '@/store/store'
+
 class View5 extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return(
             <div>

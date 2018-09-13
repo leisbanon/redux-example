@@ -1,4 +1,4 @@
-ul{
+#view5 ul{
     list-style: none;
     margin: 0;
     padding: 0;
@@ -8,14 +8,14 @@ ul{
     flex: 2;
     line-height: 35px;
 }
-ul li{
+#view5 ul li{
     border: 1px #CCCCCC solid;
     flex: 1;
     text-align: center;
 }
-ul:not(:last-child) li {
+#view5 ul:not(:last-child) li {
     border-bottom: none;
 }
-ul li:not(:last-child) {
+#view5 ul li:not(:last-child) {
     border-right: none;
 }

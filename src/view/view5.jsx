@@ -8,6 +8,7 @@ import {
     bookName
 } from '@/store/action'
 
+
 /**
  * 基于react-redux 的一书籍管理的示例Dome
  * 字段：{
@@ -37,7 +38,7 @@ class Content extends React.Component {
     }
     render() {
         return(
-            <div>
+            <div id='view5'>
                 <p>
                     <input value={this.state.bookName} onChange={this.bookNameChange.bind(this)} type="text" placeholder='请输入书籍名称'/>&emsp;
                     <button onClick={this.addBook.bind(this)}>添加</button>
@@ -96,6 +97,9 @@ class View5 extends React.Component {
         );
     }
 }
+
+
+
  
 export default hot(module)(View5)
 

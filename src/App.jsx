@@ -5,8 +5,10 @@ import {
   Switch,
 } from 'react-router-dom'
 
-// 导入Redux 模块
 import { rootRouters } from '@/router/router'
+
+import {Provider} from 'react-redux'
+import store from '@/store/store'
 
 /**
  * 组件 以及 复合组件的应用
@@ -15,21 +17,23 @@ class App extends React.Component {
   render() {
     return(
       <div className='App'>
-        <Router>
-          <Switch>
-            {
-              rootRouters.map((route,index) => {
-                return(
-                  <Route 
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}/>
-                )
-              })
-            }
-          </Switch>
-        </Router>
+        <Provider store={store}>
+          <Router>
+            <Switch>
+              {
+                rootRouters.map((route,index) => {
+                  return(
+                    <Route 
+                    key={index}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.component}/>
+                  )
+                })
+              }
+            </Switch>
+          </Router>
+        </Provider>
       </div>
     );
   }

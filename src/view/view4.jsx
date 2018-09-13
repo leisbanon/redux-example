@@ -1,11 +1,13 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 import { SubHeader } from '@/components'
 
-import store from '@/store/store'
+
 import {
     user,
     hotel,
+    userId,
 } from '@/store/action'
 
 class View5 extends React.Component {
@@ -23,15 +25,17 @@ class View5 extends React.Component {
                     <li><p>dispatch(action) => 使用dispatch 方法触发并更新我们的State</p></li>
                     <li><p>subscribe(listenter) => 该函数可以监听我们的State 变化，一旦state is update，那么将触发该监听函数。通常在该监听回调中，我们通过getState() 获取最新的状态并重新更新组件State，setState({`{...}`})</p></li>
                 </ol>
-                <strong>需要强调的是，在Redux 应用中应当只有一个Store 对象。多个Reducer 处理逻辑时，使用 <span className='color-red'>combineReducer()</span> 将多个reducer 合并成一个.</strong>
-                <pre>{`
-                import {createStore} from 'redux'
-                import {
-                    TO_USER_ID
-                } from './reducers'
-                
-                let store = createStore(TO_USER_ID);
-                `}</pre>
+                <strong>需要强调的是，在Redux 应用中应当只有一个Store 对象。多个Reducer 处理逻辑时，使用 <span className='color-red'>combineReducer()</span> 将多个reducer 合并成一个.上一章节已经讲到，<span><Link to='view3'>转到第四章节</Link></span></strong>
+                <pre>
+                    <code>{`
+                    import {createStore} from 'redux'
+                    import reducer from './reducers'
+
+                    const store = createStore(
+                        reducer
+                    );
+                    `}</code>
+                </pre>
 
                 <p><button onClick={this.toDispatch.bind(this)}>Store Dispatch userId</button></p>
                 <p><button onClick={this.toDispatch_1.bind(this)}>Store Dispatch useName</button></p>
@@ -43,13 +47,10 @@ class View5 extends React.Component {
         //注册监听State.
         const unsubscribe = store.subscribe(() => {
             let state = store.getState();
-            console.log(state);
+            alert('当前应用State：'+JSON.stringify(state));
         });
 
-        store.dispatch({
-            type:user.userId,
-            text:'431103',
-        });
+        store.dispatch(userId('431103'));
 
         //销毁监听
         unsubscribe();
@@ -58,7 +59,7 @@ class View5 extends React.Component {
         //注册监听State.
         const unsubscribe = store.subscribe(() => {
             let state = store.getState();
-            console.log(state);
+            alert('当前应用State：'+JSON.stringify(state));
         });
 
         store.dispatch({
@@ -73,7 +74,7 @@ class View5 extends React.Component {
         //注册监听State.
         const unsubscribe = store.subscribe(() => {
             let state = store.getState();
-            console.log(state);
+            alert('当前应用State：'+JSON.stringify(state));
         });
 
         store.dispatch({

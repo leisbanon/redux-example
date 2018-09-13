@@ -67,6 +67,11 @@ const routers = [
         // 使用进阶 Store
         path:'/view4',
         component:loadables('view4')
+    },
+    {
+        // 在React 中使用Redux => react-redux
+        path:'/view5',
+        component:loadables('view5')
     }
 ];
 

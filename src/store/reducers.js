@@ -3,6 +3,7 @@ import { combineReducers } from 'redux'
 import {
   user,
   hotel,
+  book,
 } from './action'
 
 const toUser = (state={},action) => {
@@ -42,9 +43,42 @@ const toHotel = (state={},action) => {
   return state;
 }
 
+const toBook = (state = {},action) => {
+  //action book bookId
+  if(action.type == book.bookId) {
+    return Object.assign(state,{
+      'bookId':action.text
+    });
+  }
+
+  //action book bookName
+  if(action.type == book.bookName) {
+    return Object.assign(state,{
+      'bookName':action.text
+    });
+  }
+
+  //action book bookPrice
+  if(action.type == book.bookPrice) {
+    return Object.assign(state,{
+      'bookPrice':action.text
+    });
+  }
+
+  //action book bookAuthor
+  if(action.type == book.bookAuthor) {
+    return Object.assign(state,{
+      'bookAuthor':action.text
+    });
+  }
+
+  return state;
+}
+
 const reducer = combineReducers({
   toUser,
   toHotel,
+  toBook,
 })
 
 export default reducer;

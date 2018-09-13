@@ -9,6 +9,9 @@ import {
 
 import {routers} from '@/router/router'
 
+import {Provider} from 'react-redux'
+import store from '@/store/store'
+
 const Content = withRouter(({history,location,match}) => {
     return(
         <div className='list'>
@@ -31,21 +34,25 @@ class List extends React.Component {
         return(
             <div className='app-container'>
                 <Content />
-                <Switch>
-                    {
-                        routers.map((route,index) => {
-                            return(
-                                <Route
-                                key={index}
-                                exact
-                                path={`${this.props.match.url}` + route.path}
-                                component={route.component}
-                                />
-                            )
-                        })
-                    }
-                    
-                </Switch>
+                <Provider store={store}>
+                    <Router>
+                        <Switch>
+                            {
+                                routers.map((route,index) => {
+                                    return(
+                                        <Route
+                                        key={index}
+                                        exact
+                                        path={`${this.props.match.url}` + route.path}
+                                        component={route.component}
+                                        />
+                                    )
+                                })
+                            }
+                            
+                        </Switch>
+                    </Router>
+                </Provider>
             </div>
         )
     }

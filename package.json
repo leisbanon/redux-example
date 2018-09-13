@@ -103,7 +103,8 @@
       "no-unused-vars": "off",
       "eqeqeq": "off",
       "no-useless-constructor": "off",
-      "react/jsx-no-comment-textnodes": "off"
+      "react/jsx-no-comment-textnodes": "off",
+      "default-case":"off"
     }
   }
 }

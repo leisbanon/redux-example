@@ -18,6 +18,7 @@ const Content = withRouter(({history,location,match}) => {
             <p onClick={() => history.push(`${match.path}/view3`)}>3、使用进阶 Reducer</p>
             <p onClick={() => history.push(`${match.path}/view4`)}>4、使用进阶 Store</p>
             <p onClick={() => history.push(`${match.path}/view5`)}>5、在React 中使用Redux => react-redux</p>
+            <p onClick={() => history.push(`${match.path}/view6`)}>6、异步处理 Action</p>
         </div>
     )
 })

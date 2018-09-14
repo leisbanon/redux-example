@@ -5,32 +5,57 @@ export const user = {
     userName:'USER_NAME',
 }
 
-// 酒店常量State
-export const hotel = {
-    roomId:'ROOM_ID',
-    roomNumber:'ROOM_NUMBER',
-}
-
 // 书籍常量State
 export const book = {
-    bookName:'BOOK_NAME',
+    addBook:'ADD_BOOK',
+    deleteBook:'DELETE_BOOK',
 }
 
-/**
- * 创建Action 函数
- */
-// 用户ID
+
+//创建Action 函数 => 用户ID
 export const userId = (text) => {
     return {
         type:user.userId,
         text
     }
  }
-
-//书籍名称
-export const bookName = (text) => {
+//创建Action 函数 => 用户姓名
+export const userName = (text) => {
     return {
-        type:book.bookName,
+        type:user.userName,
+        text
+    }
+}
+
+//定义异步Action 处理函数 => 更新用户名
+export const fetchUserName = (text) => {
+    return dispatch => {
+        return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                resolve(text);
+            }, 1500);
+        }).then(v => {
+            console.log('-----------------：' + v);
+            dispatch(userName(v));
+        })
+    }
+}
+
+
+
+
+//添加书籍
+export const addBookAction = (text) => {
+    return {
+        type:book.addBook,
+        text
+    }
+}
+
+// 删除书籍
+export const deleteBookAction = (text) => {
+    return {
+        type:book.deleteBook,
         text
     }
 }

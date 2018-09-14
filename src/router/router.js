@@ -72,6 +72,11 @@ const routers = [
         // 在React 中使用Redux => react-redux
         path:'/view5',
         component:loadables('view5')
+    },
+    {
+        // 异步处理 Action
+        path:'/view6',
+        component:loadables('view6')
     }
 ];
 

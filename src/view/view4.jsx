@@ -6,7 +6,6 @@ import { SubHeader } from '@/components'
 
 import {
     user,
-    hotel,
     userId,
 } from '@/store/action'
 
@@ -38,7 +37,6 @@ class View5 extends React.Component {
 
                 <p><button onClick={this.toDispatch.bind(this)}>Store Dispatch userId</button></p>
                 <p><button onClick={this.toDispatch_1.bind(this)}>Store Dispatch useName</button></p>
-                <p><button onClick={this.toDispatch_2.bind(this)}>Store Dispatch roomId</button></p>
             </div>
         )
     }
@@ -64,21 +62,6 @@ class View5 extends React.Component {
         store.dispatch({
             type:user.userName,
             text:'GuanQun',
-        });
-
-        //销毁监听
-        unsubscribe();
-    }
-    toDispatch_2() {
-        //注册监听State.
-        const unsubscribe = store.subscribe(() => {
-            let state = store.getState();
-            alert('当前应用State：'+JSON.stringify(state));
-        });
-
-        store.dispatch({
-            type:hotel.roomId,
-            text:'520123',
         });
 
         //销毁监听

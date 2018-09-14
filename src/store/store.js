@@ -4,8 +4,12 @@
  */
 import {createStore,applyMiddleware} from 'redux'
 
-// Redux中间件模块，对Store Dispatch的功能增强
+// 一个很便捷的 middleware，用来打印 action 日志
 import {createLogger} from 'redux-logger'
+
+//允许我们异步处理Action middleware
+import thunkMiddleware from 'redux-thunk'
+
 
 // 浏览器redux-devtools-extension的可视化工具。
 import { composeWithDevTools } from 'redux-devtools-extension'
@@ -19,7 +23,10 @@ const loggerMiddleware = createLogger({
 const store = createStore(
     reducer,
     composeWithDevTools(),
-    applyMiddleware(loggerMiddleware),
+    applyMiddleware(
+        loggerMiddleware,
+        thunkMiddleware
+    ),
 );
 
 export default store;

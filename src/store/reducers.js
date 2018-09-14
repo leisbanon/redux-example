@@ -2,7 +2,6 @@ import { combineReducers } from 'redux'
 
 import {
   user,
-  hotel,
   book,
 } from './action'
 
@@ -25,27 +24,10 @@ const toUser = (state={},action) => {
 }
 
 
-const toHotel = (state={},action) => {
-  // Action hotel.roomId
-  if(action.type == hotel.roomId) {
-    return Object.assign(state,{
-      'roomId':action.text
-    });
-  }
-
-  //Action hotel.roomNumber
-  if(action.type == hotel.roomNumber) {
-    return Object.assign(state,{
-      'roomNumber':action.text
-    });
-  }
-
-  return state;
-}
-
 let defaultBook = ['西游记'];
 const toBook = (state = defaultBook,action) => {
-  if(action.type == book.bookName) {
+  // Add Book
+  if(action.type == book.addBook) {
     let array = [
       ...state,
       ...[action.text]
@@ -53,12 +35,19 @@ const toBook = (state = defaultBook,action) => {
     let set = new Set(array);
     return [...set];
   }
+
+  // Delete Book
+  if(action.type == book.deleteBook) {
+    let index = state.findIndex((bookname) => bookname == action.text);
+    let array = [...state];
+    array.splice(index,1);
+    return array;
+  }
   return state;
 }
 
 const reducer = combineReducers({
   toUser,
-  toHotel,
   toBook,
 })
 

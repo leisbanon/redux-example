@@ -28,14 +28,14 @@ export const userName = (text) => {
 }
 
 //定义异步Action 处理函数 => 更新用户名
-export const fetchUserName = (text) => {
+export const fetchUserName = (username) => {
     return dispatch => {
+        // Promise 模拟异步网络请求的处理
         return new Promise((resolve,reject) => {
             setTimeout(() => {
-                resolve(text);
-            }, 1500);
+                resolve(username);
+            }, 1000);
         }).then(v => {
-            console.log('-----------------：' + v);
             dispatch(userName(v));
         })
     }

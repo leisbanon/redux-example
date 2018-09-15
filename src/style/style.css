@@ -56,10 +56,10 @@ pre code{
 }
 
 .color-green {
-    color: #7ec699;
+    color: #7ec699 !important;
 }
 .color-red{
-    color: #a31631;
+    color: #a31631 !important;
 }
 .indent {
     text-indent: 1em;

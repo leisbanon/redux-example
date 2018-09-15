@@ -77,6 +77,21 @@ const routers = [
         // 异步处理 Action
         path:'/view6',
         component:loadables('view6')
+    },
+    {
+        // combineReducerApi
+        path:'/combineReducerApi',
+        component:loadables('combineReducerApi')
+    },
+    {
+        // middlewareApi
+        path:'/middlewareApi',
+        component:loadables('middlewareApi')
+    },
+    {
+        // reduxDevtools
+        path:'/reduxDevtools',
+        component:loadables('reduxDevtools')
     }
 ];
 

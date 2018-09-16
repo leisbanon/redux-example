@@ -22,11 +22,11 @@ const rootRouters = [
         //根路由匹配
         path:'/',
         exact:true,
-        component:() => <Redirect to='/react-example'/>
+        component:() => <Redirect to='/redux-example'/>
     },
     {
         // 首页
-        path:'/react-example',
+        path:'/redux-example',
         component:Loadable({
             loader:() => import('@/components/list/list'),
             loading:() => ('')
@@ -92,7 +92,7 @@ const routers = [
         // reduxDevtools
         path:'/reduxDevtools',
         component:loadables('reduxDevtools')
-    }
+    },
 ];
 
 

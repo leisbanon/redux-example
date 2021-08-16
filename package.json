@@ -62,7 +62,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
-  "homepage": ".",
+  "homepage": "./",
   "proxy": "http://localhost",
   "jest": {
     "collectCoverageFrom": [
